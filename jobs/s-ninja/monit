@@ -1,5 +1,0 @@
-check process s_ninja
-  with pidfile /var/vcap/sys/run/s_ninja/s_ninja.pid
-  start program "/var/vcap/jobs/s_ninja/bin/monit_debugger s_ninja_ctl '/var/vcap/jobs/s_ninja/bin/s_ninja_ctl start'"
-  stop program "/var/vcap/jobs/s_ninja/bin/monit_debugger s_ninja_ctl '/var/vcap/jobs/s_ninja/bin/s_ninja_ctl stop'"
-  group vcap
