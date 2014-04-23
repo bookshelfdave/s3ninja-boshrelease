@@ -1,3 +1,5 @@
+This is a work in progress, and does NOT work.
+
 =======
 # BOSH Release for s3ninja
 
