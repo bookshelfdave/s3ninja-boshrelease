@@ -1,0 +1,13 @@
+---
+name: s-ninja
+packages: []
+templates:
+  bin/monit_debugger: bin/monit_debugger
+  bin/s_ninja_ctl: bin/s_ninja_ctl
+  config/s_ninja.conf.erb: config/s_ninja.conf
+  data/properties.sh.erb: data/properties.sh
+  helpers/ctl_setup.sh: helpers/ctl_setup.sh
+  helpers/ctl_utils.sh: helpers/ctl_utils.sh
+properties:
+  s_ninja.leader_address:
+    description: Hostname/IP to the leader/master of the cluster
