@@ -9,13 +9,17 @@ source /var/vcap/jobs/s3ninja/helpers/ctl_setup.sh 's3ninja'
 export PORT=${PORT:-5000}
 export LANG=en_US.UTF-8
 
+JAVA_OPTS="-server -Xmx1024m -XX:MaxPermSize=128M -Djava.net.preferIPv4Stack=true"
+SHUTDOWN_PORT="9191"
+STDOUT="logs/stdout.txt"
+
 case $1 in
 
   start)
     pid_guard $PIDFILE $JOB_NAME
 
     # TODO: Run some process
-    exec chpst -u vcap:vcap TODO \
+    exec chpst -u vcap:vcap java $JAVA_OPTS IPL >> $STDOUT \
          >>$LOG_DIR/$JOB_NAME.stdout.log \
          2>>$LOG_DIR/$JOB_NAME.stderr.log
 
