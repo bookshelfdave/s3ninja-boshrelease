@@ -1,4 +1,4 @@
 ---
 name: java7
 files:
-- java/jdk-7-linux-x64.tar.gz
+- java/jre-7u4-linux-x64.tar.gz
