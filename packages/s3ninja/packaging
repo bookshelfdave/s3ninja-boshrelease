@@ -1,0 +1,17 @@
+set -e # exit immediately if a simple command exits with a non-zero status
+set -u # report the usage of uninitialized variables
+
+# Detect # of CPUs so make jobs can be parallelized
+CPUS=$(grep -c ^processor /proc/cpuinfo)
+ # Available variables
+# $BOSH_COMPILE_TARGET - where this package & spec'd source files are available
+# $BOSH_INSTALL_TARGET - where you copy/install files to be included in package
+export HOME=/var/vcap
+
+
+PATH=/var/vcap/packages/java7/bin:$PATH
+
+unzip s3ninja/s3ninja.zip
+#cp ./app/application.conf ./instance.conf
+chmod 700 sirius.sh
+cp -a * $BOSH_INSTALL_TARGET

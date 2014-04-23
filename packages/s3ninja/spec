@@ -1,0 +1,6 @@
+---
+name: s3ninja
+dependencies:
+- java7
+files:
+- s3ninja/s3ninja.zip

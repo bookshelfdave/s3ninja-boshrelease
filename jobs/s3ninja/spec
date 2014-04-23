@@ -1,0 +1,11 @@
+---
+name: s3ninja
+packages:
+- java7
+- s3ninja
+templates:
+  bin/s3ninja_ctl: bin/s3ninja_ctl
+  bin/monit_debugger: bin/monit_debugger
+  data/properties.sh.erb: data/properties.sh
+  helpers/ctl_setup.sh: helpers/ctl_setup.sh
+  helpers/ctl_utils.sh: helpers/ctl_utils.sh
