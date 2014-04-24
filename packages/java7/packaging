@@ -1,7 +1,14 @@
 # abort script on any command that exit with a non zero value
 set -e
 if [[ `uname -a` =~ "x86_64" ]] ; then
-  archive="java7/openjdk-1.7.0_51.tar.gz"
+  #pwd = /var/vcap/data/compile/java7
+  echo "PWD"
+  pwd
+  echo "FIND"
+  find .
+
+  archive="./java7/openjdk-1.7.0_51.tar.gz"
+  ls -la $archive
   echo "Using 64-bit version"
 else
   echo "32-bit Java not supported"
@@ -18,7 +25,9 @@ fi
 echo "Extracting archive..."
 tar xzf $archive
 
-if [[ -d bin && `bin/java -version 2>&1` =~ "Java HotSpot" && $? == 0 ]]; then
+bin/java -version
+
+if [[ -d bin && `bin/java -version 2>&1` =~ "OpenJDK" && $? == 0 ]]; then
   cp -a * ${BOSH_INSTALL_TARGET}
 else
   echo "JVM is not properly packaged"
