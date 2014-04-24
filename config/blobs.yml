@@ -1,6 +1,9 @@
 ---
-java/jre-7u4-linux-x64.tar.gz:
-  object_id: a8d5cd58-ebd4-4423-8b9b-6f49af71afe8
-  sha: !binary |-
-    MTEwOGQxNzQ0YmFhNzNiZjZjYWEyYWRmOTY1ZDBmNDg5ZWExZWY2MA==
-  size: 32771159
+s3nina/s3ninja.zip/s3ninja.zip:
+  object_id: c1511714-4654-4f95-a5a5-ab73fb12b1d1
+  sha: d427e6884e2bda517cb83519c360ad599b31b7ab
+  size: 13674821
+java7/openjdk-1.7.0_51.tar.gz/openjdk-1.7.0_51.tar.gz:
+  object_id: 34b4ea5c-5132-45d7-bc13-e486469c08bc
+  sha: 0f4d3705e3a4e1452250def57cfc36ab6cc37355
+  size: 34729532

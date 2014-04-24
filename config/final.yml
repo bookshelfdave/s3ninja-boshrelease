@@ -1,5 +1,4 @@
 ---
 blobstore:
   provider: local
-  options:
-    blobstore_path: /tmp/blobstore
+final_name: s3ninja_blobstore
