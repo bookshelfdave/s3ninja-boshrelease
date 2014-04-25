@@ -1,0 +1,37 @@
+#
+# Made with all the love in the world
+# by scireum in Remshalden, Germany
+#
+# Copyright by scireum GmbH
+# http://www.scireum.de - info@scireum.de
+#
+
+product {
+    name = "S3 ninja"
+    version = "BUILD-18"
+    tagLine = "S3 ninja emulates the S3 API for development and testing purposes."
+    claim = "It is however not intended as production system as it neither provides scalability nor replication or proper security."
+}
+
+http {
+    port = <%= (properties.s3ninja && properties.s3ninja.port) && 9444 %>
+}
+
+storage {
+
+   # Will buckets be auto created on the first request via the S3 API?
+   autocreateBuckets = <%= (properties.s3ninja && properties.s3ninja.autocreateBuckets) && true %>
+
+   # Base dir for file storage. By default it's the s3 subdirectory from the projects root folder
+   baseDir  = /var/vcap/store/s3ninja
+
+   # AWS access key used for authentication checks
+   #awsAccessKey = "AKIAIOSFODNN7EXAMPLE"
+   awsAccessKey = "<%= properties.s3ninja.awsAccessKey %>"
+
+   # AWS secret key used for authentication checks
+   #awsSecretKey = "wJalrXUtnFEMI/K7MDENG/bPxRfiCYEXAMPLEKEY"
+   awsSecretKey = "<%= properties.s3ninja.awsSecretKey %>"
+
+}
+

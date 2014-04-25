@@ -1,0 +1,7 @@
+---
+properties:
+  s3ninja:
+    port: 9444
+    awsAccessKey: "foo"
+    awsSecretKey: "bar"
+    autocreateBuckets: true
