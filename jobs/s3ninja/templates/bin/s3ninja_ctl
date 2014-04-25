@@ -16,11 +16,11 @@ STDOUT="logs/stdout.txt"
 case $1 in
 
   start)
-    echo "STARTING S3NINJA"
+    echo "STARTING S3NINJA..."
     pid_guard $PIDFILE $JOB_NAME
 
-    echo "Running java $JAVA_OPTS IPL"
-    exec chpst -u vcap:vcap java $JAVA_OPTS IPL >> $STDOUT \
+    echo "s3ninja running java $JAVA_OPTS IPL"
+    exec java $JAVA_OPTS IPL >> $STDOUT \
          >>$LOG_DIR/$JOB_NAME.stdout.log \
          2>>$LOG_DIR/$JOB_NAME.stderr.log
 
