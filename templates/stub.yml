@@ -2,12 +2,12 @@
 meta:
   environment: NAME
   dns_root: microbosh
-  network_name: ssninja1
+  network_name: s_ninja1
   security_groups:
     - s_ninja
 
 director_uuid: PLACEHOLDER-DIRECTOR-UUID
 
 releases:
-  - name: s3ninja
+  - name: s-ninja
     version: latest
