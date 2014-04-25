@@ -1,0 +1,51 @@
+---
+name: s3ninjatest
+director_uuid: 1283c62e-8e7b-43c2-8f97-f42bf8aba812
+release:
+  name: s3ninjadev
+  version: latest
+compilation:
+  workers: 1
+  network: default
+  reuse_compilation_vms: false
+  cloud_properties:
+    instance_type: m1.large
+update:
+  canaries: 1
+  canary_watch_time: 5000-30000
+  update_watch_time: 5000-30000
+  max_in_flight: 4
+  max_errors: 1
+networks:
+- name: default
+  type: dynamic
+  cloud_properties:
+    security_groups:
+    - default
+- name: vip_network
+  type: vip
+  cloud_properties:
+    security_groups:
+    - default
+resource_pools:
+- name: common
+  network: default
+  size: 1
+  stemcell:
+    name: bosh-warden-boshlite-ubuntu
+    version: 51
+  cloud_properties:
+    instance_type: m1.large
+  persistent_disk: 8196
+jobs:
+- name: s3ninja
+  template: s3ninja
+  instances: 1
+  resource_pool: common
+  networks:
+  - name: default
+    default:
+    - dns
+    - gateway
+  persistent_disk: 8196
+roperties: {}
