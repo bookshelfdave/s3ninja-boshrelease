@@ -48,4 +48,9 @@ jobs:
     - dns
     - gateway
   persistent_disk: 8196
-roperties: {}
+properties:
+  s3ninja:
+    port: 9444
+    awsAccessKey: "Foo"
+    awsSecretKey: "Bar"
+    autocreateBuckets: true
