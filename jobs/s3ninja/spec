@@ -10,3 +10,14 @@ templates:
   helpers/ctl_setup.sh: helpers/ctl_setup.sh
   helpers/ctl_utils.sh: helpers/ctl_utils.sh
   config/application.conf.erb: config/application.conf
+properties:
+  s3ninja.awsAccessKey:
+    description: AWS access key
+  s3ninja.awsSecretKey:
+    description: AWS secret key
+  s3ninja.autocreateBuckets:
+    description: Automatically create S3 buckets if not already created
+    default: true
+  s3ninja.port:
+    description: Port to listen
+    default: 9444
