@@ -78,4 +78,6 @@ done
 
 PIDFILE=$RUN_DIR/$output_label.pid
 
-echo '$PATH' $PATH
+JAVA_OPTS="-server -Xmx1024m -XX:MaxPermSize=128M -Djava.net.preferIPv4Stack=true"
+SHUTDOWN_PORT="9191"
+
