@@ -54,7 +54,6 @@ jobs:
   persistent_disk: 500
 properties:
   s3ninja:
-    port: 9444
-    awsAccessKey: "Foo"
-    awsSecretKey: "Bar"
+    aws_access_ey: "Foo"
+    aws_secret_key: "Bar"
     autocreateBuckets: true
