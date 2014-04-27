@@ -54,6 +54,6 @@ jobs:
   persistent_disk: 500
 properties:
   s3ninja:
-    aws_access_ey: "Foo"
+    aws_access_key: "Foo"
     aws_secret_key: "Bar"
-    autocreateBuckets: true
+    autocreate_buckets: true

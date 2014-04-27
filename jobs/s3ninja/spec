@@ -11,11 +11,11 @@ templates:
   helpers/ctl_utils.sh: helpers/ctl_utils.sh
   config/application.conf.erb: config/application.conf
 properties:
-  s3ninja.awsAccessKey:
+  s3ninja.aws_access_key:
     description: AWS access key
-  s3ninja.awsSecretKey:
+  s3ninja.aws_secret_key:
     description: AWS secret key
-  s3ninja.autocreateBuckets:
+  s3ninja.autocreate_buckets:
     description: Automatically create S3 buckets if not already created
     default: true
   s3ninja.port:
