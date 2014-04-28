@@ -9,7 +9,7 @@ templates:
   data/properties.sh.erb: data/properties.sh
   helpers/ctl_setup.sh: helpers/ctl_setup.sh
   helpers/ctl_utils.sh: helpers/ctl_utils.sh
-  config/application.conf.erb: config/application.conf
+  config/application.conf.erb: application.conf
 properties:
   s3ninja.aws_access_key:
     description: AWS access key
