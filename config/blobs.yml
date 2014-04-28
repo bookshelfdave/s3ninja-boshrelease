@@ -1,11 +1,11 @@
 ---
-s3ninja/s3ninja-20140425.zip:
-  object_id: f7361c82-48f7-4726-9547-23add5a5bea3
-  sha: !binary |-
-    ZDQyN2U2ODg0ZTJiZGE1MTdjYjgzNTE5YzM2MGFkNTk5YjMxYjdhYg==
-  size: 13674821
 java7/openjdk-1.7.0_51.tar.gz:
   object_id: 27f27c6c-2833-4e1d-8b7f-4e5d8a55129f
   sha: !binary |-
     MGY0ZDM3MDVlM2E0ZTE0NTIyNTBkZWY1N2NmYzM2YWI2Y2MzNzM1NQ==
   size: 34729532
+s3ninja/s3ninja-20140425.zip:
+  object_id: 06be0751-ba29-44ac-a6ef-b90b2a8b88a1
+  sha: !binary |-
+    ZDQyN2U2ODg0ZTJiZGE1MTdjYjgzNTE5YzM2MGFkNTk5YjMxYjdhYg==
+  size: 13674821
