@@ -9,7 +9,7 @@ meta:
     version: latest
 
 jobs:
-  - name: s_ninja_leader_z1
+  - name: s3ninja_leader_z1
     instances: 1
     networks:
       - name: (( meta.network_name ))
@@ -18,8 +18,8 @@ jobs:
     networks:
       - name: (( meta.network_name ))
     properties:
-      s_ninja:
-        leader_address: (( "0.s-ninja-leader-z1.s-ninja1." meta.environment "." meta.dns_root ))
+      s3ninja:
+        leader_address: (( "0.s3ninja-leader-z1.s3ninja1." meta.environment "." meta.dns_root ))
 
 compilation:
   cloud_properties:

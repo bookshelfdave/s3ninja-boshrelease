@@ -1,5 +1,5 @@
 meta:
-  environment: s-ninja-warden
+  environment: s3ninja-warden
   network_name: (( merge ))
 
   stemcell:
@@ -13,19 +13,19 @@ update:
   update_watch_time: 1000-30000
 
 jobs:
-  - name: s_ninja_leader_z1
+  - name: s3ninja_leader_z1
     instances: 1
     networks:
       - name: (( meta.network_name ))
         static_ips: (( static_ips(0) ))
-  - name: s_ninja_z1
+  - name: s3ninja_z1
     instances: 2
     networks:
       - name: (( meta.network_name ))
         static_ips: ~
     properties:
-      s_ninja:
-        leader_address: (( jobs.s_ninja_leader_z1.networks.s_ninja1.static_ips.[0] ))
+      s3ninja:
+        leader_address: (( jobs.s3ninja_leader_z1.networks.s3ninja1.static_ips.[0] ))
 
 compilation:
   cloud_properties:
