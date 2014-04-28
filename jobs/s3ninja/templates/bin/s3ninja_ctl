@@ -15,14 +15,13 @@ case $1 in
   start)
     pid_guard $PIDFILE $JOB_NAME
     export PATH=/var/vcap/packages/java7/bin:$PATH
+    # s3ninja looks for instance.conf in the CWD
     cd /var/vcap/jobs/s3ninja
-    exec /var/vcap/packages/java7/bin/java $JAVA_OPTS \
-    -cp "/var/vcap/packages/s3ninja/:/var/vcap/packages/s3ninja/app:/var/vcap/packages/s3ninja/lib/*" IPL >>$LOG_DIR/$JOB_NAME.stdout.log \
-              2>>$LOG_DIR/$JOB_NAME.stderr.log
+
+    /var/vcap/packages/java7/bin/java $JAVA_OPTS -cp "/var/vcap/packages/s3ninja/:/var/vcap/packages/s3ninja/app:/var/vcap/packages/s3ninja/lib/*" IPL >>$LOG_DIR/$JOB_NAME.stdout.log 2>>$LOG_DIR/$JOB_NAME.stderr.log &
+
     # store pid in $PIDFILE
-    JAVA_PID = $!
-    echo $JAVA_PID > $PIDFILE
-    echo "Pid $JAVA_PID stored in $PIDFILE" > $LOG_DIR/$JOB_NAME.foo
+    echo $!> $PIDFILE
     ;;
 
   stop)
