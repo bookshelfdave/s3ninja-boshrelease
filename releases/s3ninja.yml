@@ -24,5 +24,5 @@ jobs:
     Y2IyMzhiNzBkMTVhM2ZjODE3MmJkMzlkNzk4MmI0YjI3OWNiMjYzOQ==
 commit_hash: 6197a433
 uncommitted_changes: true
-name: bosh-release
+name: s3ninja
 version: 1
