@@ -1,5 +1,3 @@
-This is a work in progress, and does NOT work.
-
 =======
 # BOSH Release for s3ninja
 
@@ -9,7 +7,7 @@ To use this bosh release, first upload it to your bosh:
 
 ```
 bosh target BOSH_HOST
-git clone https://github.com/cloudfoundry-community/s3ninja-boshrelease.git
+git clone https://github.com/metadave/s3ninja-boshrelease.git
 cd s3ninja-boshrelease
 bosh upload release releases/s3ninja-1.yml
 ```
@@ -27,6 +25,20 @@ For AWS EC2, create a single VM:
 templates/make_manifest aws-ec2
 bosh -n deploy
 ```
+
+
+### Properties
+
+S3Ninja defaults to port 9444, which you can override in the properties file.
+
+Property name | Description | Default
+--------------|-------------|---------
+port|The port that s3ninja listens on|9444
+aws_access_key|AWS Access Key| no default, **REQUIRED**
+aws_secret_key|AWS Secret Key| no default, **REQUIRED**
+autocreate_buckets|if `true`, buckets wil be auto created on the first request via the S3 API|`true`
+
+See `./examples/default.yml` for more info.
 
 ### Override security groups
 
