@@ -12,7 +12,7 @@ export HOME=/var/vcap
 PATH=/var/vcap/packages/java7/bin:$PATH
 # make an s3 storage directory
 mkdir -p /var/vcap/store/s3ninja
-unzip s3ninja/s3ninja.zip
+unzip s3ninja/s3ninja-20140425.zip:
 cp ./app/application.conf ./instance.conf
 chmod 755 sirius.sh
 echo "Installing s3ninja to $BOSH_INSTALL_TARGET"

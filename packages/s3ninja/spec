@@ -3,4 +3,4 @@ name: s3ninja
 dependencies:
 - java7
 files:
-- s3ninja/s3ninja.zip
+- s3ninja/s3ninja-20140425.zip:
