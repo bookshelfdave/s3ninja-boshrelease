@@ -1,0 +1,28 @@
+---
+packages:
+- name: java7
+  version: 1
+  sha1: !binary |-
+    YTIwMjAxY2RjODc2Mzc1OTY2NzQ2OTdkYzM2YzZhMWVhOTg5MTY5YQ==
+  fingerprint: !binary |-
+    ZmI0YTA0M2Y2ZWY5MDY4N2YxNzNkNjNmMDZlNTA5MDU0ZjBkNWY1MA==
+  dependencies: []
+- name: s3ninja
+  version: 1
+  sha1: !binary |-
+    OTE2ZWMwMTA0NzFiNzNmZGVkMjhhMGE5OTQ2NDQ4YmM0MWE1NzRhOQ==
+  fingerprint: !binary |-
+    NTE3YWVmMjNiNmUyZDYzZWE1N2Q3NDcxYzQxYWViMDdmZWE0NTM1ZA==
+  dependencies:
+  - java7
+jobs:
+- name: s3ninja
+  version: 1
+  fingerprint: !binary |-
+    ZTc4ZTk2YzM4OWQ1Y2EwNWM2ODI5OTNjNWJkNjI4NGE3NmRkNjNjNw==
+  sha1: !binary |-
+    Y2IyMzhiNzBkMTVhM2ZjODE3MmJkMzlkNzk4MmI0YjI3OWNiMjYzOQ==
+commit_hash: 6197a433
+uncommitted_changes: true
+name: bosh-release
+version: 1
