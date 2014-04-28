@@ -23,7 +23,7 @@ storage {
    autocreateBuckets = <%= p('s3ninja.autocreate_buckets') && true %>
 
    # Base dir for file storage. By default it's the s3 subdirectory from the projects root folder
-   baseDir  = /var/vcap/store/s3ninja
+   baseDir  = "/var/vcap/store/s3ninja"
 
    # AWS access key used for authentication checks
    awsAccessKey = "<%= p('s3ninja.aws_access_key') %>"

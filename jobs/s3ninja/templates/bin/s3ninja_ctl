@@ -14,18 +14,20 @@ case $1 in
 
   start)
     pid_guard $PIDFILE $JOB_NAME
-
     export PATH=/var/vcap/packages/java7/bin:$PATH
-    exec /var/vcap/packages/java7/bin/java $JAVA_OPTS IPL \
-         >>$LOG_DIR/$JOB_NAME.stdout.log \
-         2>>$LOG_DIR/$JOB_NAME.stderr.log
+    cd /var/vcap/jobs/s3ninja
+    exec /var/vcap/packages/java7/bin/java $JAVA_OPTS \
+    -cp "/var/vcap/packages/s3ninja/:/var/vcap/packages/s3ninja/app:/var/vcap/packages/s3ninja/lib/*" IPL >>$LOG_DIR/$JOB_NAME.stdout.log \
+              2>>$LOG_DIR/$JOB_NAME.stderr.log
     # store pid in $PIDFILE
-    echo $! > $PIDFILE
+    JAVA_PID = $!
+    echo $JAVA_PID > $PIDFILE
+    echo "Pid $JAVA_PID stored in $PIDFILE" > $LOG_DIR/$JOB_NAME.foo
     ;;
 
   stop)
-    /var/vcap/packages/java7/bin/java $JAVA_OPTS -Dkill=true -Dport=$SHUTDOWN_PORT IPL
-    #kill_and_wait $PIDFILE
+    #/var/vcap/packages/java7/bin/java $JAVA_OPTS -Dkill=true -Dport=$SHUTDOWN_PORT IPL
+    kill_and_wait $PIDFILE
 
     ;;
   *)
