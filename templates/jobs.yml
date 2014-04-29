@@ -10,7 +10,11 @@ update:
 
 jobs:
   - name: s3ninja
-    template: s3ninja
+    templates:
+      - name: s3ninja
+        release: s3ninja
+      - name: nginx
+        release: s3ninja
     instances: 0
     resource_pool: small_z1
     networks: (( merge ))
