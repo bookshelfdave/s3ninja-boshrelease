@@ -25,6 +25,6 @@ properties:
   s3ninja.s3_port:
     default: 9445
     description: Port to listen, s3ninja s3 endpoint
-  s3ninja.proxy_timeout_in_seconds
+  s3ninja.proxy_timeout_in_seconds:
     default: 10
     description: proxy send/read timeout

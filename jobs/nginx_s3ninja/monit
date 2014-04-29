@@ -1,5 +1,0 @@
-check process nginx
-  with pidfile /var/vcap/sys/run/nginx_s3ninja/nginx.pid
-  start program "/var/vcap/jobs/nginx_s3ninja/bin/monit_debugger nginx_ctl '/var/vcap/jobs/nginx_s3ninja/bin/nginx_ctl start'"
-  stop program "/var/vcap/jobs/nginx_s3ninja/bin/monit_debugger nginx_ctl '/var/vcap/jobs/nginx_s3ninja/bin/nginx_ctl stop'"
-  group vcap

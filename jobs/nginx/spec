@@ -1,7 +1,6 @@
 ---
-name: nginx_s3ninja
+name: nginx
 packages:
-- java7
 - nginx
 templates:
   bin/nginx_ctl.erb: bin/nginx_ctl
