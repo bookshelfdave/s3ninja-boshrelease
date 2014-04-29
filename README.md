@@ -9,7 +9,7 @@ To use this bosh release, first upload it to your bosh:
 bosh target BOSH_HOST
 git clone https://github.com/metadave/s3ninja-boshrelease.git
 cd s3ninja-boshrelease
-bosh upload release releases/s3ninja-1.yml
+bosh upload release releases/s3ninja-2.yml
 ```
 
 Create a `my-s3ninja.yml` input file to contain your AWS credentials:
