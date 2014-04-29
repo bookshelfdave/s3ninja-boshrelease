@@ -12,7 +12,7 @@ cd s3ninja-boshrelease
 bosh upload release releases/s3ninja-1.yml
 ```
 
-Createa `my-s3ninja.yml` input file to contain your AWS credentials:
+Create a `my-s3ninja.yml` input file to contain your AWS credentials:
 
 ```
 properties:
