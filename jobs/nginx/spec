@@ -1,0 +1,11 @@
+---
+name: nginx
+packages:
+- java7
+- nginx
+templates:
+  bin/nginx_ctl: bin/nginx_ctl
+  bin/monit_debugger: bin/monit_debugger
+  data/properties.sh.erb: data/properties.sh
+  helpers/ctl_setup.sh: helpers/ctl_setup.sh
+  helpers/ctl_utils.sh: helpers/ctl_utils.sh

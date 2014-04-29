@@ -20,5 +20,11 @@ properties:
     description: Automatically create S3 buckets if not already created
     default: true
   s3ninja.port:
-    description: Port to listen
+    description: Port to listen, s3ninja UI
     default: 9444
+  s3ninja.s3_port:
+    default: 9445
+    description: Port to listen, s3ninja s3 endpoint
+  s3ninja.proxy_timeout_in_seconds
+    default: 10
+    description: proxy send/read timeout
