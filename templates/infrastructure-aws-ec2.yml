@@ -10,7 +10,6 @@ meta:
 
 jobs:
   - name: s3ninja
-    instances: 1
     networks:
       - name: (( meta.network_name ))
 

@@ -28,14 +28,12 @@ http {
 
   keepalive_timeout  75 20; #inherited from router
 
-  #client_max_body_size <%= p("ccng.client_max_body_size") %>; #already enforced upstream/but doesn't hurt.
-
   server {
-    listen    <%= p("s3ninja.s3_port") %>;
+    listen    <%= p("s3ninja.s3port") %>;
     server_name  _;
     server_name_in_redirect off;
-    proxy_send_timeout          <%= p("s3ninja.proxy_timeout_in_seconds") %>;
-    proxy_read_timeout          <%= p("s3ninja.proxy_timeout_in_seconds") %>;
+    proxy_send_timeout          <%= p("nginx.proxy_timeout_in_seconds") %>;
+    proxy_read_timeout          <%= p("nginx.proxy_timeout_in_seconds") %>;
 
     # proxy and log all CC traffic
     location / {
@@ -46,7 +44,8 @@ http {
       #proxy_set_header            X-Forwarded-For $proxy_add_x_forwarded_for;
       #proxy_redirect              off;
       #proxy_connect_timeout       10;
-      proxy_pass http://localhost:<%= p("s3ninja.port") %>/s3/;
+      #pass requests from :s3ninja.s3port -> :s3ninja.uiport/s3
+      proxy_pass http://localhost:<%= p("s3ninja.uiport") %>/s3/;
     }
 
   }

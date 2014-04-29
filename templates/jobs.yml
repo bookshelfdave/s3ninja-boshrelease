@@ -15,7 +15,7 @@ jobs:
         release: s3ninja
       - name: nginx
         release: s3ninja
-    instances: 0
+    instances: 1
     resource_pool: small_z1
     networks: (( merge ))
 

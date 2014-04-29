@@ -19,6 +19,6 @@ properties:
   s3ninja.autocreate_buckets:
     description: Automatically create S3 buckets if not already created
     default: true
-  s3ninja.port:
+  s3ninja.uiport:
     description: Port to listen, s3ninja UI
     default: 9444
