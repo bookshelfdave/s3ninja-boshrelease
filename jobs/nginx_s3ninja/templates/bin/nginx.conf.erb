@@ -1,8 +1,8 @@
 # deployment cloudcontroller nginx.conf
 user  vcap vcap;
 
-error_log /var/vcap/sys/log/nginx/nginx.error.log;
-pid       /var/vcap/sys/run/nginx/nginx.pid;
+error_log /var/vcap/sys/log/nginx_s3ninja/nginx.error.log;
+pid       /var/vcap/sys/run/nginx_s3ninja/nginx.pid;
 
 events {
   worker_connections  8192;
@@ -20,7 +20,7 @@ http {
                    '$proxy_add_x_forwarded_for vcap_request_id:$upstream_http_x_vcap_request_id '
                    'response_time:$upstream_response_time';
 
-  access_log  /var/vcap/sys/log/nginx/nginx.access.log  main;
+  access_log  /var/vcap/sys/log/nginx_s3ninja/nginx.access.log  main;
 
   sendfile             on;  #enable use of sendfile()
   tcp_nopush           on;
@@ -39,13 +39,13 @@ http {
 
     # proxy and log all CC traffic
     location / {
-      access_log /var/vcap/sys/log/nginx/nginx.access.log  main;
-      proxy_buffering             off;
-      proxy_set_header            Host $host;
-      proxy_set_header            X-Real_IP $remote_addr;
-      proxy_set_header            X-Forwarded-For $proxy_add_x_forwarded_for;
-      proxy_redirect              off;
-      proxy_connect_timeout       10;
+      access_log /var/vcap/sys/log/nginx_s3ninja/nginx.access.log  main;
+      #proxy_buffering             off;
+      #proxy_set_header            Host $host;
+      #proxy_set_header            X-Real_IP $remote_addr;
+      #proxy_set_header            X-Forwarded-For $proxy_add_x_forwarded_for;
+      #proxy_redirect              off;
+      #proxy_connect_timeout       10;
       proxy_pass http://localhost:<%= p("s3ninja.port") %>/s3/;
     }
 
