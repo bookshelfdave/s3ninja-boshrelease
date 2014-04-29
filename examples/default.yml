@@ -1,7 +1,0 @@
----
-properties:
-  s3ninja:
-    port: 9444
-    aws_access_key: "foo"
-    aws_secret_key: "bar"
-    autocreate_buckets: true

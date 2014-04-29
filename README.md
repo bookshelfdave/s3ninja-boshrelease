@@ -42,12 +42,20 @@ S3Ninja defaults to port 9444, which you can override in the properties file.
 
 Property name | Description | Default
 --------------|-------------|---------
-port|The port that s3ninja listens on|9444
-aws_access_key|AWS Access Key| no default, **REQUIRED**
-aws_secret_key|AWS Secret Key| no default, **REQUIRED**
-autocreate_buckets|if `true`, buckets wil be auto created on the first request via the S3 API|`true`
+s3ninja.aws_access_key|AWS Access Key| no default, **REQUIRED**
+s3ninja.aws_secret_key|AWS Secret Key| no default, **REQUIRED**
+s3ninja.autocreate_buckets|if `true`, buckets wil be auto created on the first request via the S3 API|`true`
+s3ninja.uiport|The port that the S3ninja gui runs on|9444
+s3ninja.s3port|S3 endpoint port. See below for more info| 9445
+nginx.proxy_timeout_seconds|Proxy send/read timeout|10
 
-See `./examples/default.yml` for more info.
+####S3Ninja gui
+
+The S3Ninja gui litens on `s3ninja.uiport`. 
+
+####S3Ninja/Nginx proxy
+
+Because S3Ninja uses /s3 as the S3 endpoint, many S3 clients can't connect to it directly. This release contains an Nginx proxy that listens on a separate port (`s3ninja.s3port`) to service commands at /. 
 
 ### Override security groups
 
@@ -73,3 +81,29 @@ You now suffix this file path to the `make_manifest` command:
 templates/make_manifest openstack-nova my-networking.yml
 bosh -n deploy
 ```
+
+
+### bosh blobstore_client_console
+
+To use the blobstore client provided with bosh, create a file called `blobstore-s3ninja.yml` using the following as a template:
+
+```yaml
+---
+bucket_name: foobar
+access_key_id: admin
+secret_access_key: SECRET_KEY
+use_ssl: false
+port: 9445
+host: 10.244.2.2
+s3_force_path_style: true
+```
+
+Next, pass the file you just created to the `blobstore_client_console` command:
+
+```
+blobstore_client_console -p s3 -c blobstore-s3ninja.yml
+oid = bsc.create("test data content")
+bsc.get(oid)
+bsc.delete(oid)
+```
+
