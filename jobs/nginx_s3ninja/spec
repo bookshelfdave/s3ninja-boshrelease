@@ -5,6 +5,7 @@ packages:
 - nginx
 templates:
   bin/nginx_ctl.erb: bin/nginx_ctl
+  config/nginx.conf.erb: config/nginx.conf
   bin/monit_debugger: bin/monit_debugger
   data/properties.sh.erb: data/properties.sh
   helpers/ctl_setup.sh: helpers/ctl_setup.sh
