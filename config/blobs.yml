@@ -9,3 +9,23 @@ s3ninja/s3ninja-20140425.zip:
   sha: !binary |-
     ZDQyN2U2ODg0ZTJiZGE1MTdjYjgzNTE5YzM2MGFkNTk5YjMxYjdhYg==
   size: 13674821
+nginx/headers-more-v0.25.tgz:
+  object_id: 3b391cd1-d23e-4ed6-8859-832dd41353d5
+  sha: !binary |-
+    NTE0YmMzZGYzMGIyNGViMGEwNjUzM2YxZWJhYTU3OWI4OTg5OTBmNQ==
+  size: 27973
+nginx/nginx-1.4.5.tar.gz:
+  object_id: 1589757e-b547-49ff-a2c7-27e6b2bb5666
+  sha: !binary |-
+    OTZjMWFlY2QzMTRmNzNhM2MzMGEwZGI4YzM5YWQxNWRkYWNiMDc0ZQ==
+  size: 768728
+nginx/nginx-upload-module-2.2.tar.gz:
+  object_id: a48c86bf-59a7-4d3a-8cef-668d4c0db2f5
+  sha: !binary |-
+    NzRjY2QxMTY1MjVhMTU1ZGI3NmY5MmExY2Q0ODRkOTUxNmE3MDM5OA==
+  size: 28505
+nginx/pcre-8.34.tar.gz:
+  object_id: 405a95f1-a877-41ff-9aff-1e14882b121b
+  sha: !binary |-
+    ZDQ2ZTUzNzMzN2VlNzBkZjE5MDg0MDAxYTRiNjgxNWIzZDY5ZmU2Yw==
+  size: 1933734
