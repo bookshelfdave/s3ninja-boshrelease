@@ -2,6 +2,7 @@
 name: s3ninja
 packages:
 - java7
+- nginx
 - s3ninja
 templates:
   bin/s3ninja_ctl: bin/s3ninja_ctl
