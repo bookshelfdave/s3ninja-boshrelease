@@ -12,17 +12,26 @@ cd s3ninja-boshrelease
 bosh upload release releases/s3ninja-1.yml
 ```
 
-For [bosh-lite](https://github.com/cloudfoundry/bosh-lite), you can quickly create a deployment manifest & deploy a cluster:
+Createa `my-s3ninja.yml` input file to contain your AWS credentials:
 
 ```
-templates/make_manifest warden
+properties:
+  s3ninja:
+    aws_access_key: admin
+    aws_secret_key: SECRET_KEY
+```
+
+For [bosh-lite](https://github.com/cloudfoundry/bosh-lite), you can quickly create a deployment manifest, using the keys above, and deploy a VM:
+
+```
+templates/make_manifest warden my-s3ninja.yml
 bosh -n deploy
 ```
 
-For AWS EC2, create a single VM:
+For AWS EC2, create a single VM backed by an EBS:
 
 ```
-templates/make_manifest aws-ec2
+templates/make_manifest aws-ec2 my-s3ninja.yml
 bosh -n deploy
 ```
 

@@ -9,22 +9,13 @@ update:
   serial: false
 
 jobs:
-  - name: s3ninja_leader_z1
+  - name: s3ninja
     template: s3ninja
     instances: 0
     resource_pool: small_z1
     networks: (( merge ))
-  - name: s3ninja_z1
-    template: s3ninja
-    instances: 0
-    resource_pool: small_z1
-    networks: (( merge ))
-    update:
-      canaries: 10
-    properties:
-      s3ninja:
-        leader_address: (( merge ))
 
 networks: (( merge ))
 
-properties: {}
+properties:
+  s3ninja: (( merge ))
