@@ -1,0 +1,49 @@
+---
+packages:
+- name: common
+  version: 1
+  sha1: !binary |-
+    MTI3MDNiY2M5MWE1MzZiOTJmZjc4YjYxY2Q5ZWY0YTY3NTdmMTA5Nw==
+  fingerprint: !binary |-
+    OGMwMTI1N2ViZTZmZGRhNmY0NWVmODk5NmYwYWRiNTQwMDFlODU1ZQ==
+  dependencies: []
+- name: java7
+  version: 1
+  sha1: !binary |-
+    YTIwMjAxY2RjODc2Mzc1OTY2NzQ2OTdkYzM2YzZhMWVhOTg5MTY5YQ==
+  fingerprint: !binary |-
+    ZmI0YTA0M2Y2ZWY5MDY4N2YxNzNkNjNmMDZlNTA5MDU0ZjBkNWY1MA==
+  dependencies: []
+- name: nginx
+  version: 1
+  sha1: !binary |-
+    MTMxY2VjOGEzZGM5YWVmNGNmZjY2Njc2ZDNhOWY2Yjk1OGUyMjAwNQ==
+  fingerprint: !binary |-
+    ZDIzNGZiYWFmOGZmOGRhOGNkYjU2NGQ5YTc4ZDhjODg4MTFhOGU0ZA==
+  dependencies: []
+- name: s3ninja
+  version: 2
+  sha1: !binary |-
+    YjZkZjkyZDhmOWMyMTlkNDVkMjM2ODA5MzM1NTQ3ZDE2MzE2ODI2NA==
+  fingerprint: !binary |-
+    ZGVhMTAyNDQ4MzVkMGJkYzVkYzk3OTQwNTBjMzFhODU2ODM0OGM3OA==
+  dependencies:
+  - java7
+  - nginx
+jobs:
+- name: nginx
+  version: 1
+  fingerprint: !binary |-
+    NGYwNjlkMWU4MzAwMTc4ZDE3ZmQ3MzNmZmJmYTRlOGZlNGExODdlYw==
+  sha1: !binary |-
+    Y2U5M2MwNmU3MTM0NGQ1YmY5NDBkNzU0NWJkZThlYjMzNDRkYWQwNQ==
+- name: s3ninja
+  version: 2
+  fingerprint: !binary |-
+    MmJlNmVjYWEyOTgwMjM1OTE5YTdhNWUwOTM1OWUxNjliYzZmNjY3Nw==
+  sha1: !binary |-
+    ZDI4YWZmMWVlMDAzOTcyNGYzOWM4Y2RmZmY1YTBhNjE1NDc5ODFlZg==
+commit_hash: ab4551b6
+uncommitted_changes: true
+name: s3ninja
+version: 2
