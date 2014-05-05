@@ -105,5 +105,7 @@ blobstore_client_console -p s3 -c blobstore-s3ninja.yml
 oid = bsc.create("test data content")
 bsc.get(oid)
 bsc.delete(oid)
+
+file =  bsc.create_file("some_id", File.new("/path/to/an/existing/file","r")
 ```
 
