@@ -49,9 +49,15 @@ s3ninja.uiport|The port that the S3ninja gui runs on|9444
 s3ninja.s3port|S3 endpoint port. See below for more info| 9445
 nginx.proxy_timeout_seconds|Proxy send/read timeout|10
 
-####S3Ninja gui
+####S3Ninja GUI
 
 The S3Ninja gui litens on `s3ninja.uiport`. 
+
+If you are testing with bosh-lite, you can access the gui with this address:
+
+	http://10.244.2.2:9444/
+
+Note, the access key and secret keys are listed in the GUI home page.
 
 ####S3Ninja/Nginx proxy
 
